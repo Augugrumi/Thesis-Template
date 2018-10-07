@@ -242,3 +242,7 @@ TSWLatexianTemp*
 *.spl
 
 *.fuse*
+
+# List of Sections should be ignored
+res/listOfSections.tex
+
