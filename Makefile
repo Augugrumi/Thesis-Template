@@ -1,7 +1,7 @@
 #Author: Polonio Davide <poloniodavide@gmail.com>
 #License: GPLv3
 
-OUTPUT_NAME= Tesi
+OUTPUT_NAME= Thesis
 LIST_NAME= listOfSections.tex
 PATH_OF_CONTENTS= res/sections
 MAIN_FILE= main
