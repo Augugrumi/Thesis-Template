@@ -5,21 +5,21 @@
 %**************************************************************
 % Frontespizio
 %**************************************************************
-\newcommand{\myName}{Nome Cognome}                                    % autore
-\newcommand{\myTitle}{Una tesi bellissima}
-\newcommand{\mySupervisor}{Nome Cognome}                        % relatore
-\newcommand{\myCoSupervisor}{Nome Cognome}                      % co-relatore
+\newcommand{\myName}{Name Surname}                                    % autore
+\newcommand{\myTitle}{A thesis}                                 % tipo di tesi
+\newcommand{\mySupervisor}{Name Surname}                        % relatore
+\newcommand{\myCoSupervisor}{Name Surname}                      % co-relatore
 % decomment line 12 or 13
 \newbool{ifCoSupervisor}
 \booltrue{ifCoSupervisor}
 % \boolfalse{ifCoSupervisor}
-\newcommand{\myDegree}{Tesi di laurea magistrale}                % tipo di tesi
+\newcommand{\myDegree}{Tesi di laurea magistrale}                
 \newcommand{\myUni}{Università degli Studi di Padova}           % università
 \newcommand{\myFaculty}{Corso di Laurea in Informatica}         % facoltà
 \newcommand{\myDepartment}{Dipartimento di Matematica}          % dipartimento
 \newcommand{\myLocation}{Padova}                                % dove
 \newcommand{\myAA}{2017-2018}                                   % anno
-\newcommand{\myTime}{Sett 2018}                                  % quando
+\newcommand{\myTime}{December 2018}                             % quando
 
 
 %**************************************************************
@@ -46,19 +46,19 @@
 
 \setlength\bibitemsep{1.5\itemsep} % spazio tra entry
 
-\DeclareBibliographyCategory{opere}
-\DeclareBibliographyCategory{web}
-
-\addtocategory{web}{site:agile-manifesto}
-\addtocategory{web}{site:aws-lambda}
-\addtocategory{web}{site:aws-api-gateway}
-\addtocategory{web}{site:apex}
-\addtocategory{web}{site:swagger}
-\addtocategory{web}{site:messenger-facebook}
-\addtocategory{web}{site:aws-dynamodb}
-\addtocategory{web}{site:mocha}
-
-\defbibheading{web}{\section*{Siti Web consultati}}
+% \DeclareBibliographyCategory{opere}
+% \DeclareBibliographyCategory{web}
+% 
+% \addtocategory{web}{site:agile-manifesto}
+% \addtocategory{web}{site:aws-lambda}
+% \addtocategory{web}{site:aws-api-gateway}
+% \addtocategory{web}{site:apex}
+% \addtocategory{web}{site:swagger}
+% \addtocategory{web}{site:messenger-facebook}
+% \addtocategory{web}{site:aws-dynamodb}
+% \addtocategory{web}{site:mocha}
+% 
+% \defbibheading{web}{\section*{Siti Web consultati}}
 
 
 %**************************************************************
@@ -113,7 +113,7 @@
     %nesting=true,
     %frenchlinks,
     urlcolor=webbrown,
-    linkcolor=RoyalBlue,
+    linkcolor=webbrown,
     citecolor=webgreen,
     %pagecolor=RoyalBlue,
     %urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,
@@ -162,7 +162,8 @@
 %**************************************************************
 \definecolor{webgreen}{rgb}{0,.5,0}
 \definecolor{webbrown}{rgb}{.6,0,0}
-
+\definecolor{Pantone}{RGB}{155,0,20}
+\definecolor{GrigioLight}{RGB}{152, 152, 152}
 
 %**************************************************************
 % Altro
@@ -170,77 +171,13 @@
 
 \newcommand{\omissis}{[\dots\negthinspace]} % produce [...]
 
-% eccezioni all'algoritmo di sillabazione
-\hyphenation
-{
-    ma-cro-istru-zio-ne
-    gi-ral-din
-}
-
-\newcommand{\sectionname}{sezione}
-\addto\captionsitalian{\renewcommand{\figurename}{figura}
-                       \renewcommand{\tablename}{tabella}}
+\newcommand{\sectionname}{section}
+\addto\captionsitalian{\renewcommand{\figurename}{figure}
+                       \renewcommand{\tablename}{table}}
 
 \newcommand{\glsfirstoccur}{\ap{{[g]}}}
 
 \newcommand{\intro}[1]{\emph{\textsf{#1}}}
-
-%**************************************************************
-% Environment per ``rischi''
-%**************************************************************
-\newcounter{riskcounter}                % define a counter
-\setcounter{riskcounter}{0}             % set the counter to some initial value
-
-%%%% Parameters
-% #1: Title
-\newenvironment{risk}[1]{
-    \refstepcounter{riskcounter}        % increment counter
-    \par \noindent                      % start new paragraph
-    \textbf{\arabic{riskcounter}. #1}   % display the title before the
-                                        % content of the environment is
-%displayed
-}{
-    \par\medskip
-}
-
-\newcommand{\riskname}{Rischio}
-
-\newcommand{\riskdescription}[1]{\textbf{\\Descrizione:} #1.}
-
-\newcommand{\risksolution}[1]{\textbf{\\Soluzione:} #1.}
-
-%**************************************************************
-% Environment per ``use case''
-%**************************************************************
-\newcounter{usecasecounter}             % define a counter
-\setcounter{usecasecounter}{0}          % set the counter to some initial value
-
-%%%% Parameters
-% #1: ID
-% #2: Nome
-\newenvironment{usecase}[2]{
-    \renewcommand{\theusecasecounter}{\usecasename #1}  % this is where the
-%display of
-                                                        % the counter is
-%overwritten/modified
-    \refstepcounter{usecasecounter}             % increment counter
-    \vspace{10pt}
-    \par \noindent                              % start new paragraph
-    {\large \textbf{\usecasename #1: #2}}       % display the title before the
-                                                % content of the environment is
-%displayed
-    \medskip
-}{
-    \medskip
-}
-
-\newcommand{\usecasename}{UC}
-
-\newcommand{\usecaseactors}[1]{\textbf{\\Attori Principali:} #1. \vspace{4pt}}
-\newcommand{\usecasepre}[1]{\textbf{\\Precondizioni:} #1. \vspace{4pt}}
-\newcommand{\usecasedesc}[1]{\textbf{\\Descrizione:} #1. \vspace{4pt}}
-\newcommand{\usecasepost}[1]{\textbf{\\Postcondizioni:} #1. \vspace{4pt}}
-\newcommand{\usecasealt}[1]{\textbf{\\Scenario Alternativo:} #1. \vspace{4pt}}
 
 %**************************************************************
 % Environment per ``namespace description''
@@ -256,3 +193,115 @@
 }
 
 \newcommand{\classdesc}[2]{\item[\textbf{#1:}] #2}
+
+
+%-------------------INIZIO creazione subsubparagraph---------------------------
+\makeatletter
+\newcounter{subsubparagraph}[subparagraph]
+\def\toclevel@subsubparagraph{6}
+\renewcommand\thesubsubparagraph{%
+  \thesubparagraph.\@arabic\c@subsubparagraph}
+\newcommand\subsubparagraph{%
+  \@startsection{subsubparagraph}    % counter
+    {6}                              % level
+    {\parindent}                     % indent
+    {3.25ex \@plus 1ex \@minus .2ex} % beforeskip
+    {-1em}                           % afterskip
+    {\normalfont\normalsize\bfseries}}
+\newcommand\l@subsubparagraph{\@dottedtocline{6}{13.5em}{5em}}
+\newcommand{\subsubparagraphmark}[1]{}
+\setcounter{tocdepth}{6}
+\setcounter{secnumdepth}{6} % aggiunge contatore ai paragrafi
+\makeatother
+%-------------------FINE creazione subsubparagraph-----------------------------
+
+%-------------------Capitoli personalizzati------------------------------------
+
+\titleformat{\chapter}[display]
+  {\normalsize \huge  \color{black}}%
+  {\flushright\normalsize \color{Pantone}%
+   \MakeUppercase{\chaptertitlename}\hspace{1ex}%
+   {\fontsize{60}{60}\selectfont\thechapter}}%
+  {10 pt}%
+  {\bfseries\huge#1}%
+
+%----------------FINE Capitoli personalizzati----------------------------------
+
+%----------------INIZIO Parte personalizzata-----------------------------------
+
+\renewcommand\thepart{\Alph{part}}
+
+\newcommand\partnumfont{% font specification for the number
+  \fontsize{304}{104}\color{white}\selectfont%
+}
+
+\newcommand\partnamefont{% font specification for the name "PART"
+  \color{white}\huge\bfseries%
+}
+
+\titleformat{\part}[display]
+   {\normalfont\huge\filleft}
+   { }
+   {20pt}
+   {\begin{tikzpicture}[remember picture,overlay]
+  \fill[GrigioLight]
+    (current page.north west) rectangle ([yshift=-13cm]current page.north
+east);
+    \node[
+      fill=Pantone,
+      text width=2\paperwidth,
+      rounded corners=6cm,
+      text depth=12cm,
+      anchor=center,
+      inner sep=0pt] at ([yshift=21cm]current page.south west) (parttop)
+    {\thepart};%
+    \node[
+      anchor=center,
+      inner sep=0pt,
+      outer sep=0pt] at ([xshift=16cm, yshift=6cm]parttop.south) (partnum)
+    {\partnumfont\thepart};%
+    \node[
+      anchor=north east,
+      align=right,
+      inner sep=0pt] at ([yshift=10cm] current page.center)
+    {\parbox{.7\textwidth}{\raggedleft\partnamefont\MakeUppercase{#1}}};
+    \end{tikzpicture}%
+}
+
+%--------------- FINE parte personalizzata ------------------------------------
+
+%--------------- MULTI columns ------------------------------------------------
+
+\newcounter{countitems}
+\newcounter{nextitemizecount}
+\newcommand{\setupcountitems}{%
+  \stepcounter{nextitemizecount}%
+  \setcounter{countitems}{0}%
+  \preto\item{\stepcounter{countitems}}%
+}
+\makeatletter
+\newcommand{\computecountitems}{%
+  \edef\@currentlabel{\number\c@countitems}%
+  \label{countitems@\number\numexpr\value{nextitemizecount}-1\relax}%
+}
+\newcommand{\nextitemizecount}{%
+  \getrefnumber{countitems@\number\c@nextitemizecount}%
+}
+\newcommand{\previtemizecount}{%
+  \getrefnumber{countitems@\number\numexpr\value{nextitemizecount}-1\relax}%
+}
+\makeatother    
+\newenvironment{AutoMultiColItemize}{%
+\ifnumcomp{\nextitemizecount}{>}{3}{\begin{multicols}{2}}{}%
+\setupcountitems\begin{itemize}}%
+{\end{itemize}%
+\unskip\computecountitems\ifnumcomp{\previtemizecount}{>}{3}{\end{multicols}}{}}
+
+\newenvironment{AutoMultiColEnumerate}{%
+\ifnumcomp{\nextitemizecount}{>}{3}{\begin{multicols}{2}}{}%
+\setupcountitems\begin{enumerate}}%
+{\end{enumerate}%
+\unskip\computecountitems\ifnumcomp{\previtemizecount}{>}{3}{\end{multicols}}{}}
+
+%--------------- END MULTI columns ---------------------------------------------
+

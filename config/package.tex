@@ -3,7 +3,7 @@
                twoside,                 % impagina per fronte-retro
                openright,               % inizio capitoli a destra
                english,                 
-               italian,                 
+%                italian,                 
                ]{book}    
 
 
@@ -20,7 +20,8 @@
 
 % per scrivere in italiano e in inglese;
 % l'ultima lingua (l'italiano) risulta predefinita
-\usepackage[english, italian]{babel}    
+% \usepackage[english, italian]{babel}    
+\usepackage[english]{babel}
 
 \usepackage{bookmark}                   % segnalibri
 
@@ -65,7 +66,8 @@
 
 \usepackage{subfig}                     % sottofigure, sottotabelle
 
-\usepackage[italian]{varioref}          % riferimenti completi della pagina
+% \usepackage[italian]{varioref}          % riferimenti completi della pagina
+\usepackage[english]{varioref}
 
 \usepackage[dvipsnames]{xcolor}         % colori
 
@@ -107,3 +109,24 @@
   \if\relax\detokenize{#1}\relax\temp\else\let#1\temp\fi}
 
 \usepackage{ifthen}
+\usepackage{todonotes}
+
+% aggiunto per avere enumeration e itemize inline
+\usepackage[inline]{enumitem}
+
+% titoli dei capitoli personalizzati
+\usepackage[explicit]{titlesec}
+
+% part personalizzata
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{wrapfig}
+
+% Multi-column
+\usepackage{etoolbox,refcount}
+
+% scrittura su più di una colonna
+\usepackage{multicol}
+
+% Marging notes
+\usepackage{marginnote}
