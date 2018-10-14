@@ -12,7 +12,7 @@ SHELL := /bin/bash #Need bash not shell
 all: compile
 
 compile: clean
-	set -e; \
+	@set -e; \
 	function glossary () { \
 		makeindex -s $(MAIN_FILE).ist -t $(MAIN_FILE).glg -o $(MAIN_FILE).gls \
 		$(MAIN_FILE).glo; \
