@@ -6,7 +6,7 @@ LIST_NAME= listOfSections.tex
 PATH_OF_CONTENTS= res/sections
 MAIN_FILE= main
 export PRINT= n
-
+LANG= en
 SHELL := /bin/bash #Need bash not shell
 
 all: compile
@@ -50,3 +50,8 @@ compile: clean
 clean:
 	git clean -Xfd
 	if [[ -a "$(OUTPUT_NAME)" ]]; then rm -rv $(OUTPUT_NAME)/; fi;
+
+spellcheck:
+	./tools/spellchecker/spellcheck.sh $(LANG)
+
+ci: spellcheck compile

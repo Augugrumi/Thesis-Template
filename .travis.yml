@@ -20,7 +20,7 @@ addons:
     - aspell
     - aspell-en
 script:
-- make compile
+- make ci LANG=en
 after_failure:
 - cat Thesis.log
 before_deploy:
