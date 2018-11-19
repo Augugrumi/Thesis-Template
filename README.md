@@ -25,7 +25,7 @@ frontespizio su pelle dando il comando:
 
 ## FILE_LIST
 
-E' possibile scegliere i file da compilare. Questa opzione è particolarmente
+È possibile scegliere i file da compilare. Questa opzione è particolarmente
 utile se si sta lavorando ad un singolo capitolo e si vuole capire come verrà
 reso con il template.
 ```bash
